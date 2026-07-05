@@ -17,6 +17,9 @@ Live at [fwdio.org](https://fwdio.org).
 - [`policy-eval-kit.md`](policy-eval-kit.md) — turns a written policy into a
   running evaluation: rubric with anchors, boundary-heavy test set, blind
   grading with a calibration number, and a report someone can act on.
+- [`the-council.md`](the-council.md) — convenes five minds around your hardest
+  decision: blind pitches, forced dissent, a forged top three, one honest
+  quarrel, and a verdict with kill criteria and a minority report.
 
 ## Norms
 
