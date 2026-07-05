@@ -65,7 +65,11 @@
     list-style: none;
     counter-reset: step;
   }
-  .runbox li { counter-increment: step; }
+  .runbox li {
+    counter-increment: step;
+    padding-left: 1.9rem;
+    text-indent: -1.9rem;
+  }
   .runbox li::before {
     content: counter(step) ".\00a0\00a0";
     color: var(--pen);
