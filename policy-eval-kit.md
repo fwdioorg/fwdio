@@ -107,8 +107,16 @@ sees discussed, and rotate cases over time — a memorized eval measures memory.
 Run the cases against the target system and save raw outputs verbatim into
 `myeval/runs/` with date and model version. Grade **blind** — grader sees output +
 rubric, not the expected answer. Then a second pass (second person, or same person
-a day later, or a second model instance): agreement rate is your calibration
-number. Below ~85%, go fix the rubric before trusting any finding.
+a day later, or a different model): agreement rate is your calibration number.
+Below ~85%, go fix the rubric before trusting any finding.
+
+Two grader rules that pay for this whole kit:
+- If a model grades a model, rotate model families for the second pass.
+  Agreement between two instances of the same model is one opinion wearing
+  two hats.
+- Treat agreement above ~98% as a finding too. Real boundary cases make honest
+  graders hesitate; perfect harmony usually means your cases quietly retreated
+  from the boundary.
 
 ## Phase 5 — Report
 
@@ -118,6 +126,16 @@ easy; here's the harder set we add next"). Findings phrased so the person who ac
 on them can act: case, grade, why it matters, suggested fix. Reruns diff against
 prior runs — that's your regression line, and it's the whole reason evals beat
 vibes.
+
+One retirement rule: the moment a number becomes a target, it stops being a
+measurement. Retire any case the team has started writing toward.
+
+## Phase 5.5 — Eval the eval
+
+This kit submits to its own standard. Hand `rubric.md` and three graded cases
+to a fresh instance with no other context and have it grade them cold. If its
+grades don't match yours, the rubric isn't done — fix the document, not the
+grader. Anything that measures should be measurable.
 
 ## Phase 6 — Make it travel
 
