@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fwdio — kits you run yourself</title>
+<meta name="description" content="Self-contained, agent-runnable markdown kits. Drop one into your AI and the work happens on your machine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FCFCFA;
+    --ink: #1A1A18;
+    --pen: #2743C7;
+    --graphite: #6B6B66;
+    --rule: #E7E7E1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 16px; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 41rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 3rem;
+  }
+  .wordmark {
+    font-family: "Archivo Black", "Arial Black", sans-serif;
+    font-size: clamp(3.2rem, 10vw, 4.75rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    user-select: none;
+  }
+  .wordmark .dot { color: var(--pen); }
+  blockquote.thesis {
+    margin: 1.75rem 0 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+  blockquote.thesis::before {
+    content: ">\00a0";
+    color: var(--pen);
+    font-weight: 700;
+  }
+  .intro {
+    margin-top: 2.5rem;
+    color: var(--ink);
+  }
+  .intro em { font-style: italic; }
+  .runbox {
+    margin: 2.75rem 0 0;
+    border: 1px solid var(--rule);
+    padding: 1.1rem 1.25rem;
+    font-size: 0.92rem;
+    background: #FFFFFF;
+  }
+  .runbox .fence { color: var(--graphite); user-select: none; }
+  .runbox ol {
+    list-style: none;
+    counter-reset: step;
+  }
+  .runbox li { counter-increment: step; }
+  .runbox li::before {
+    content: counter(step) ".\00a0\00a0";
+    color: var(--pen);
+    font-weight: 700;
+  }
+  .kits { margin-top: 3.5rem; }
+  .kits > .label {
+    color: var(--graphite);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+  }
+  .kit {
+    margin-top: 2.25rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  .kit h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .kit h2::before {
+    content: "#\00a0";
+    color: var(--pen);
+  }
+  .kit h2 a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .kit h2 a:hover, .kit h2 a:focus-visible { color: var(--pen); }
+  .kit .desc { margin-top: 0.6rem; }
+  .kit .links {
+    margin-top: 0.9rem;
+    font-size: 0.92rem;
+  }
+  .kit .links a {
+    color: var(--pen);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    margin-right: 1.5rem;
+  }
+  .kit .links a:hover, .kit .links a:focus-visible {
+    background: var(--pen);
+    color: var(--paper);
+    border-bottom-color: var(--pen);
+  }
+  .norms {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    color: var(--graphite);
+    font-size: 0.92rem;
+  }
+  footer {
+    margin-top: 4.5rem;
+    font-size: 0.88rem;
+    color: var(--graphite);
+  }
+  footer a { color: inherit; }
+  footer a:hover, footer a:focus-visible { color: var(--pen); }
+  a:focus-visible {
+    outline: 2px solid var(--pen);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <h1 class="wordmark">fwdio<span class="dot">.</span></h1>
+  <blockquote class="thesis">Fine. We&rsquo;ll do it ourselves.</blockquote>
+
+  <p class="intro">
+    Self-contained kits &mdash; plain markdown files &mdash; that hand an
+    ordinary person real leverage. Drop one into your AI agent and the work
+    happens on <em>your</em> machine. No accounts, no backend, nothing running
+    on ours. The file is the product.
+  </p>
+
+  <div class="runbox" aria-label="How to run a kit">
+    <div class="fence">```how to run a kit</div>
+    <ol>
+      <li>download a kit &mdash; it&rsquo;s just a .md file</li>
+      <li>drop it in a fresh folder and open your AI agent
+          (built for Claude&nbsp;Code, works anywhere)</li>
+      <li>say: <strong>&ldquo;read this and run it&rdquo;</strong></li>
+    </ol>
+    <div class="fence">```</div>
+  </div>
+
+  <section class="kits">
+    <div class="label">## kits &mdash; two so far, on purpose</div>
+
+    <article class="kit">
+      <h2><a href="/the-seed.md">the-seed.md</a></h2>
+      <p class="desc">
+        A kit that makes kits. It interviews you about what you&rsquo;re up
+        against, tells you honestly if a markdown file isn&rsquo;t the answer,
+        and co-builds a new kit for your situation &mdash; one you can keep,
+        rerun, and hand to the next person.
+      </p>
+      <p class="links"><a href="/the-seed.md">raw .md</a></p>
+    </article>
+
+    <article class="kit">
+      <h2><a href="/policy-eval-kit.md">policy-eval-kit.md</a></h2>
+      <p class="desc">
+        Turns a written policy into a running evaluation. For the trust-and-safety
+        analyst who knows exactly what &ldquo;violating&rdquo; looks like and was
+        told the checking is an engineering problem. Rubric with anchors,
+        boundary-heavy test set, blind grading, a calibration number, and a
+        report someone can act on.
+      </p>
+      <p class="links"><a href="/policy-eval-kit.md">raw .md</a></p>
+    </article>
+  </section>
+
+  <p class="norms">
+    Curation over volume: five great kits beat fifty. Every kit is required to
+    say &ldquo;a markdown file isn&rsquo;t the answer here&rdquo; when it
+    isn&rsquo;t &mdash; crime, HR matters, and mental-health crises route to
+    real humans, always.
+  </p>
+
+  <footer>
+    &lt;!-- curated by
+    <a href="https://www.linkedin.com/in/codysummerstrust" rel="me">Cody Summers</a>,
+    with Claude --&gt;
+  </footer>
+</main>
+</body>
+</html>
