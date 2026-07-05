@@ -14,7 +14,6 @@
     --ink: #1A1A18;
     --pen: #2743C7;
     --graphite: #6B6B66;
-    --rule: #E7E7E1;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { font-size: 16px; }
@@ -22,110 +21,85 @@
     background: var(--paper);
     color: var(--ink);
     font-family: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-    line-height: 1.65;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
   .page {
-    max-width: 41rem;
+    max-width: 39rem;
     margin: 0 auto;
-    padding: 4.5rem 1.5rem 3rem;
+    padding: 5.5rem 1.5rem 4rem;
   }
   .wordmark {
     font-family: "Archivo Black", "Arial Black", sans-serif;
-    font-size: clamp(3.2rem, 10vw, 4.75rem);
+    font-size: clamp(3.2rem, 10vw, 4.5rem);
     line-height: 0.95;
     letter-spacing: -0.02em;
     user-select: none;
   }
-  .wordmark .dot { color: var(--pen); }
-  blockquote.thesis {
-    margin: 1.75rem 0 0;
-    font-size: 1.05rem;
-    font-weight: 500;
-  }
-  blockquote.thesis::before {
-    content: ">\00a0";
-    color: var(--pen);
+  .accent { color: var(--pen); }
+  .thesis {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 700;
   }
   .intro {
-    margin-top: 2.5rem;
-    color: var(--ink);
+    margin-top: 2.75rem;
+    max-width: 34rem;
   }
   .intro em { font-style: italic; }
-  .runbox {
-    margin: 2.75rem 0 0;
-    border: 1px solid var(--rule);
-    padding: 1.1rem 1.25rem;
-    font-size: 0.92rem;
-    background: #FFFFFF;
+  .label {
+    color: var(--graphite);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
   }
-  .runbox .fence { color: var(--graphite); user-select: none; }
-  .runbox ol {
+  .run { margin-top: 3.75rem; }
+  .run ol {
+    margin-top: 1.1rem;
     list-style: none;
     counter-reset: step;
+    max-width: 34rem;
   }
-  .runbox li {
+  .run li {
     counter-increment: step;
     padding-left: 1.9rem;
     text-indent: -1.9rem;
+    margin-top: 0.5rem;
   }
-  .runbox li::before {
+  .run li::before {
     content: counter(step) ".\00a0\00a0";
     color: var(--pen);
     font-weight: 700;
   }
-  .kits { margin-top: 3.5rem; }
-  .kits > .label {
-    color: var(--graphite);
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-  }
-  .kit {
-    margin-top: 2.25rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-  }
+  .kits { margin-top: 4.25rem; }
+  .kit { margin-top: 2.5rem; }
   .kit h2 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
     line-height: 1.4;
-  }
-  .kit h2::before {
-    content: "#\00a0";
-    color: var(--pen);
   }
   .kit h2 a {
     color: var(--ink);
     text-decoration: none;
+    border-bottom: 2px solid var(--pen);
+    padding-bottom: 1px;
   }
-  .kit h2 a:hover, .kit h2 a:focus-visible { color: var(--pen); }
-  .kit .desc { margin-top: 0.6rem; }
-  .kit .links {
-    margin-top: 0.9rem;
-    font-size: 0.92rem;
-  }
-  .kit .links a {
+  .kit h2 a:hover, .kit h2 a:focus-visible {
     color: var(--pen);
-    font-weight: 500;
-    text-decoration: none;
-    border-bottom: 1px solid currentColor;
-    margin-right: 1.5rem;
   }
-  .kit .links a:hover, .kit .links a:focus-visible {
-    background: var(--pen);
-    color: var(--paper);
-    border-bottom-color: var(--pen);
+  .kit .desc {
+    margin-top: 0.7rem;
+    max-width: 34rem;
   }
   .norms {
-    margin-top: 3.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
+    margin-top: 4.25rem;
     color: var(--graphite);
     font-size: 0.92rem;
+    max-width: 34rem;
   }
   footer {
-    margin-top: 4.5rem;
+    margin-top: 5rem;
     font-size: 0.88rem;
     color: var(--graphite);
   }
@@ -142,59 +116,55 @@
 </head>
 <body>
 <main class="page">
-  <h1 class="wordmark">fwdio<span class="dot">.</span></h1>
-  <blockquote class="thesis">Fine. We&rsquo;ll do it ourselves.</blockquote>
+  <h1 class="wordmark">fwdio<span class="accent">.</span></h1>
+  <p class="thesis">Fine. We&rsquo;ll do it ourselves<span class="accent">.</span></p>
 
   <p class="intro">
-    Self-contained kits &mdash; plain markdown files &mdash; that hand an
-    ordinary person real leverage. Drop one into your AI agent and the work
-    happens on <em>your</em> machine. No accounts, no backend, nothing running
-    on ours. The file is the product.
+    Self-contained kits: plain markdown files that hand an ordinary person
+    real leverage. Drop one into your AI agent and the work happens on
+    <em>your</em> machine. No accounts, no backend, nothing running on ours.
+    The file is the product.
   </p>
 
-  <div class="runbox" aria-label="How to run a kit">
-    <div class="fence">```how to run a kit</div>
+  <section class="run" aria-label="How to run a kit">
+    <div class="label">How to run a kit</div>
     <ol>
-      <li>download a kit &mdash; it&rsquo;s just a .md file</li>
-      <li>drop it in a fresh folder and open your AI agent
-          (built for Claude&nbsp;Code, works anywhere)</li>
-      <li>say: <strong>&ldquo;read this and run it&rdquo;</strong></li>
+      <li>Download a kit. It&rsquo;s just a .md file.</li>
+      <li>Drop it in a fresh folder and open your AI agent.
+          Built for Claude&nbsp;Code; works anywhere.</li>
+      <li>Say <strong>&ldquo;read this and run it.&rdquo;</strong></li>
     </ol>
-    <div class="fence">```</div>
-  </div>
+  </section>
 
   <section class="kits">
-    <div class="label">## kits &mdash; two so far, on purpose</div>
+    <div class="label">Kits &middot; two so far, on purpose</div>
 
     <article class="kit">
       <h2><a href="/the-seed.md">the-seed.md</a></h2>
       <p class="desc">
         A kit that makes kits. It interviews you about what you&rsquo;re up
-        against, tells you honestly if a markdown file isn&rsquo;t the answer,
-        and co-builds a new kit for your situation &mdash; one you can keep,
+        against, tells you honestly when a markdown file isn&rsquo;t the
+        answer, and builds a new kit for your situation that you can keep,
         rerun, and hand to the next person.
       </p>
-      <p class="links"><a href="/the-seed.md">raw .md</a></p>
     </article>
 
     <article class="kit">
       <h2><a href="/policy-eval-kit.md">policy-eval-kit.md</a></h2>
       <p class="desc">
-        Turns a written policy into a running evaluation. For the trust-and-safety
-        analyst who knows exactly what &ldquo;violating&rdquo; looks like and was
-        told the checking is an engineering problem. Rubric with anchors,
-        boundary-heavy test set, blind grading, a calibration number, and a
-        report someone can act on.
+        Turns a written policy into a running evaluation. Built for the
+        trust and safety analyst who knows exactly what a violation looks
+        like and keeps hearing that the checking is an engineering problem.
+        A rubric with anchors, a boundary-heavy test set, blind grading, a
+        calibration number, and a report someone can act on.
       </p>
-      <p class="links"><a href="/policy-eval-kit.md">raw .md</a></p>
     </article>
   </section>
 
   <p class="norms">
-    Curation over volume: five great kits beat fifty. Every kit is required to
-    say &ldquo;a markdown file isn&rsquo;t the answer here&rdquo; when it
-    isn&rsquo;t &mdash; crime, HR matters, and mental-health crises route to
-    real humans, always.
+    Curation over volume: five great kits beat fifty. Every kit must be able
+    to say a markdown file isn&rsquo;t the answer. Crime, HR matters, and
+    mental-health crises route to real humans, always.
   </p>
 
   <footer>
