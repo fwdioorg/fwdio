@@ -85,17 +85,44 @@
   #mat .ram .r1 sup{font-size:9px;}
   #mat .ram .r2{font-family:Georgia,'Times New Roman',serif; font-style:italic; font-size:12.5px; letter-spacing:.4px; margin-top:1px; color:var(--ink);}
 
-  #mat .foot{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-top:12px; flex-wrap:wrap;}
-  #mat .foot .cr{font-size:11px; color:#8a7a5c; font-style:italic; text-align:right; max-width:560px; line-height:1.4;}
+  /* diner masthead: logo + tableware doodles up top */
+  #mat .masthead{display:flex; align-items:center; justify-content:center; gap:22px; margin-bottom:5px;}
+  #mat .masthead .ram{margin:0;}
+  #mat .mdoodle{flex:0 0 auto;}
+  #mat .mdoodle svg{width:56px; height:auto; display:block;}
+  #mat .titlerow{display:flex; align-items:center; justify-content:center; gap:15px;}
+  #mat .titlerow h1{margin:0;}
+  #mat .util svg{height:52px; width:auto; display:block;}
 
-  @media(max-width:640px){#mat .grid{grid-template-columns:1fr;} #mat h1{font-size:30px;} #mat .drule{margin:9px 20px 0;}}
+  #mat .foot{display:flex; align-items:flex-end; justify-content:center; gap:16px; margin-top:12px; flex-wrap:wrap;}
+  #mat .foot .cr{font-size:11px; color:#8a7a5c; font-style:italic; text-align:center; max-width:560px; line-height:1.4;}
+
+  @media(max-width:640px){
+    #mat .grid{grid-template-columns:1fr;} #mat h1{font-size:30px;} #mat .drule{margin:9px 20px 0;}
+    #mat .masthead{gap:12px;} #mat .mdoodle svg{width:40px;}
+    #mat .titlerow{gap:8px;} #mat .util svg{height:36px;}
+  }
 </style>
 
 <div class="paper"><div class="field">
 
   <!-- MASTHEAD -->
+  <div class="masthead">
+    <!-- steaming coffee cup -->
+    <span class="mdoodle"><svg viewBox="0 0 80 76"><path d="M30 24 q-5 -7 0 -14 q5 -7 0 -14" fill="none" stroke="#2E2A20" stroke-width="2" stroke-linecap="round"/><path d="M46 24 q-5 -7 0 -14 q5 -7 0 -14" fill="none" stroke="#2E2A20" stroke-width="2" stroke-linecap="round"/><ellipse cx="38" cy="66" rx="30" ry="6" fill="#fff" stroke="#2E2A20" stroke-width="2.5"/><path d="M60 39 q13 -1 13 10 q0 10 -13 9" fill="none" stroke="#2E2A20" stroke-width="2.5"/><path d="M16 34 h44 l-5 22 q-1 6 -8 6 H29 q-7 0 -8 -6 z" fill="#F8EAB9" stroke="#2E2A20" stroke-width="2.5" stroke-linejoin="round"/><ellipse cx="38" cy="35" rx="22" ry="4.5" fill="#8B5E3C" stroke="#2E2A20" stroke-width="2"/></svg></span>
+    <!-- Read a Mat logo, now up top -->
+    <div class="ram"><div class="r1">Read a Mat<sup>&reg;</sup></div><div class="r2">Eat and Learn</div></div>
+    <!-- slice of pie w/ cherry -->
+    <span class="mdoodle"><svg viewBox="0 0 84 74"><path d="M10 26 L74 26 L42 68 Z" fill="#E28A6B" stroke="#2E2A20" stroke-width="2.5" stroke-linejoin="round"/><path d="M25 34 L38 58 M44 32 L46 62 M60 33 L50 54" stroke="#B25836" stroke-width="1.6" fill="none" opacity=".6"/><path d="M6 26 q36 -15 72 0 l0 5 q-36 -15 -72 0 z" fill="#D7BA90" stroke="#2E2A20" stroke-width="2.5" stroke-linejoin="round"/><circle cx="42" cy="18" r="5.5" fill="#C4553F" stroke="#2E2A20" stroke-width="2"/><path d="M42 12.5 q3 -4 7 -3" fill="none" stroke="#2E2A20" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+  </div>
   <div class="tagline">★ &nbsp; the lunchtime learning classic, all grown up &nbsp; ★</div>
-  <h1>The $29,000 Question</h1>
+  <div class="titlerow">
+    <!-- fork -->
+    <span class="util"><svg viewBox="0 0 30 88"><path d="M7 6 v22 M15 6 v22 M23 6 v22" stroke="#2E2A20" stroke-width="2.6" stroke-linecap="round"/><path d="M6 28 h18 l-4 9 h-10 z" fill="#2E2A20"/><path d="M15 37 v45" stroke="#2E2A20" stroke-width="3.4" stroke-linecap="round"/></svg></span>
+    <h1>The $29,000 Question</h1>
+    <!-- knife -->
+    <span class="util"><svg viewBox="0 0 30 88"><path d="M11 6 q11 3 11 21 q0 12 -9 15 z" fill="#DDEBF3" stroke="#2E2A20" stroke-width="2.4" stroke-linejoin="round"/><path d="M13 42 v40" stroke="#2E2A20" stroke-width="3.4" stroke-linecap="round"/></svg></span>
+  </div>
   <div class="sub">SHOULD MOM TAKE THE LUMP SUM, OR KEEP THE BIGGER CHECK?</div>
   <div class="drule"></div>
 
@@ -214,9 +241,8 @@
     </div>
   </div>
 
-  <!-- FOOTER w/ authentic logo -->
+  <!-- FOOTER -->
   <div class="foot">
-    <div class="ram"><div class="r1">Read a Mat<sup>&reg;</sup></div><div class="r2">Eat and Learn</div></div>
     <div class="cr">A loving homage — not affiliated with The Straight Edge, Inc. Placemat wisdom, not official tax or financial advice; confirm the exact numbers with the Social Security office.<br>&copy; Your loving kids &nbsp;&bull;&nbsp; Made with love in the U.S.A.</div>
   </div>
 
